@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Redirect all root requests to the public folder
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^$ public/index.php [L]
+
+# Forbid access to the app folder
+RewriteRule ^app/ - [F,L]
